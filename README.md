@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # survey-frontend
 
 ## Project setup
@@ -23,6 +22,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# survey-frontend
->>>>>>> 090594001120d4bcfe2f735b7ad0064d84f328e5
