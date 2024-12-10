@@ -22,7 +22,7 @@ pipeline {
                 script {
                     
                     // Securely handling Docker login
-                    withCredentials([usernamePassword(credentialsId: 'docker-cred', 
+                    withCredentials([usernamePassword(credentialsId: 'Docker', 
                                                       usernameVariable: 'DOCKER_USER', 
                                                       passwordVariable: 'DOCKER_PASS')]) {
                         sh """
