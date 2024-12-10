@@ -7,6 +7,7 @@ const routes = [
   { path: '/', name: 'HomePage', component: HomePage },
   { path: '/surveypage/:id?', name: 'SurveyPage', component: SurveyPage },
   { path: '/listall', name: 'ListAll', component: ListAll },
+  { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
 const router = createRouter({
