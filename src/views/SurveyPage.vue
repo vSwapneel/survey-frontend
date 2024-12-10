@@ -238,7 +238,7 @@ export default {
     // Get Call
     async fetchSurveyData(id) {
       try {
-        const response = await fetch(`http://ec2-34-193-155-170.compute-1.amazonaws.com:30678/api/surveys/${id}`);
+        const response = await fetch(`http://ec2-34-228-72-38.compute-1.amazonaws.com:30098/api/surveys/${id}`);
         if (response.ok) {
           const data = await response.json();
           this.firstName = data.firstName;
@@ -286,8 +286,8 @@ export default {
       }
 
       const url = this.surveyId
-        ? `http://localhost:8081/api/surveys/${this.surveyId}` // PUT URL if surveyId exists
-        : "http://localhost:8081/api/surveys"; // POST URL if no surveyId
+        ? `http://ec2-34-228-72-38.compute-1.amazonaws.com:30098/api/surveys/${this.surveyId}` // PUT URL if surveyId exists
+        : "http://ec2-34-228-72-38.compute-1.amazonaws.com:30098/api/surveys"; // POST URL if no surveyId
 
       const method = this.surveyId ? "PUT" : "POST"; // Use PUT if surveyId exists, else POST
 

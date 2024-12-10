@@ -49,7 +49,7 @@
     methods: {
       async fetchSurveys() {
         try {
-          const response = await fetch("http://localhost:8081/api/surveys");
+          const response = await fetch("http://ec2-34-228-72-38.compute-1.amazonaws.com:30098/api/surveys");
           if (response.ok) {
             this.surveys = await response.json();
           } else {
@@ -69,7 +69,7 @@
   
       async onDelete(id) {
         try {
-          const response = await fetch(`http://localhost:8081/api/surveys/${id}`, {
+          const response = await fetch(`http://ec2-34-228-72-38.compute-1.amazonaws.com:30098/api/surveys/${id}`, {
             method: "DELETE",
           });
   
