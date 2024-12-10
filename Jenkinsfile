@@ -47,12 +47,24 @@ pipeline {
             }
         }
 
+        // stage('Deploy to Rancher') {
+        //     steps {
+        //         script {
+        //             sh "kubectl set image deployment/deployment container-0=${env.IMAGE_NAME}"
+        //         }
+        //     }
+        // }
+
         stage('Deploy to Rancher') {
             steps {
                 script {
-                    sh "kubectl set image deployment/deployment container-0=${env.IMAGE_NAME}"
+                    // Ensure KUBECONFIG is set to use the correct credentials from Jenkins credentials
+                    withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                        sh "kubectl set image deployment/deployment container-0=${env.IMAGE_NAME}"
+                    }
                 }
             }
         }
+
     }
 }
